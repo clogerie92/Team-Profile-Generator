@@ -10,4 +10,12 @@ describe("Employee", () => {
             expect(employee.email).toEqual("captainamerica@avengers.com");
         });
     });
+
+    describe("get name", () => {
+        it("should return the employee's name", () => {
+            const employee = new Employee ("Tony Stark", 2, "ironman@avengers.com");
+
+            expect(employee.getName()).toEqual("Tony Stark");
+        });
+    });
 });
