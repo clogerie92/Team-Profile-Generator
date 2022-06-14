@@ -7,7 +7,6 @@ This is a Node.js command-line application that takes in information about emplo
 ## Table of Contents
 * [Installation](#installation)
 * [Usage](#usage)
-* [License](#license)
 * [Contributing](#contributing)
 * [Tests](#tests)
 * [Questions](#questions)
@@ -16,7 +15,7 @@ This is a Node.js command-line application that takes in information about emplo
 
 The following image shows a mock-up of the generated HTML’s appearance and functionality:
 
-![HTML webpage titled "Team Profile Generator” features five boxes listing employee names, titles, and other key info.](./images/team.png)
+![HTML webpage titled "Team Profile Generator” features five boxes listing employee names, titles, and other key info.](./images/team2.png)
 
 
 
@@ -28,11 +27,8 @@ Use inquirer from your terminal to answer the questions.
 View walk through video here - [Screencastify]()<br>
 <img src="./images/">
 
-## License 
-This project is license under MIT
-
 ## Contributing 
-Contributors should read the installation section. 
+Contributors should reference the installation section. 
 
 ## Tests
 Run `npm test` to run Jest for tests. 
