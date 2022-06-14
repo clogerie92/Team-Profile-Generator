@@ -1,5 +1,3 @@
-const Manager = require("../lib/Manager");
-
 const createManagerCard = function(manager) {
     return `
     <div class="col-4 mt-4">
