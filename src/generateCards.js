@@ -9,6 +9,7 @@ const createManagerCard = function(manager) {
             </div>
             <div class="card-body">
                 <h5 class="card-title">Manager<i class="bi bi-clipboard2"></i></h5>
+                <p class="id">ID: ${manager.id}</p>
                 <p class="email">Email:<a href="${manager.email}">${manager.email}</a></p>
                 <p class="office-number">Office Number: ${manager.officeNumber}</p>
             </div>
@@ -26,6 +27,7 @@ const createEngineerCard = function(engineer) {
             </div>
             <div class="card-body">
                 <h5 class="card-title">Engineer<i class="bi bi-pc-display-horizontal"></i></h5>
+                <p class="id">ID: ${engineer.id}</p>
                 <p class="email">Email:<a href="email at:${engineer.email}">${engineer.email}</a></p>
                 <p class="github">GitHub: <a href="https://github.com/${engineer.gitHub}">${engineer.gitHub}</a></p>
             </div>
@@ -43,6 +45,7 @@ const createInternCard = function(intern) {
             </div>
             <div class="card-body">
                 <h5 class="card-title">Intern<i class="bi bi-person-badge"></i></h5>
+                <p class="id">ID: ${intern.id}</p>
                 <p class="email">Email:<a href="email at:${intern.email}">${intern.email}</a></p>
                 <p class="school">School: ${intern.school}</p>
             </div>
