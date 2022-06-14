@@ -4,8 +4,9 @@ const path = require("path");
 const Manager = require("./lib/Manager");
 const Engineer = require("./lib/Engineer");
 const Intern = require("./lib/Intern");
-const team = [];
-
+// empployees array
+const employees = [];
+// manager prompt
 const addManager = () => {
     return inquirer.prompt([
         {
@@ -32,10 +33,10 @@ const addManager = () => {
         const {name, id, email, officeNumber} = managerInfo;
         const manager = new Manager(name, id, email, officeNumber);
         console.log("Added: ", manager);
-        team.push(manager);
+        employees.push(manager);
     });
 }
-
+// intern/engineer prompt
 const addEmployee = () => {
     return inquirer.prompt([
         {
@@ -87,13 +88,36 @@ const addEmployee = () => {
             newEmployee = new Inter(name, id, email, school);
             console.log("Added: ", newEmployee)
         }
-        team.push(newEmployee);
+        employees.push(newEmployee);
 
         if(confirmNewEmployee) {
-            return addEmployee(team);
+            return addEmployee(employees);
         } else {
             return team;
         }
     });
 };
+// creates html file and adds it to dist folder
+const htmlFile = teamData => {
+    fs.writeFile("./dist/index.html", teamData, error => {
+        if (error) {
+            console.log(error);
+        } else {
+            console.log("index.html file created in dist folder!");
+        }
+    })
+};
+
+addManager().then(addEmployee).then(employees => {
+    return createHTML(employees);
+}).then(htmlPage => {
+    return fs.writeFile(htmlPage);
+}).catch(error => {
+    console.log(error);
+});
+
+
+
+
+
 
