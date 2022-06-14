@@ -1,3 +1,20 @@
+const Manager = require("../lib/Manager");
+
+const createManagerCard = function(manager) {
+    return `
+    <div class="col-4 mt-4">
+        <div class="card">
+            <h5 class="card-header">${manager.name}</h5>
+            <div class="card-body">
+                <h5 class="card-title">Manager</h5>
+                <p class="email">Email:<a href="email at:${manager.email}">${manager.email}</a></p>
+                <p class="office-number">Office Number: ${manager.officeNumber}</p>
+            </div>
+        </div>
+    </div>
+    `;
+};
+
 const createEngineerCard = function(engineer) {
     return `
     <div class="col-4 mt-4">
