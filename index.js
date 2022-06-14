@@ -1,10 +1,10 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
-const path = require("path");
+const createHTML = require("./src/generateCards")
 const Manager = require("./lib/Manager");
 const Engineer = require("./lib/Engineer");
 const Intern = require("./lib/Intern");
-// empployees array
+// employees array
 const employees = [];
 // manager prompt
 const addManager = () => {
@@ -36,8 +36,9 @@ const addManager = () => {
         employees.push(manager);
     });
 }
-// intern/engineer prompt
+// engineer/intern prompt
 const addEmployee = () => {
+    console.log("Adding employees to the team!")
     return inquirer.prompt([
         {
             type: "list",
@@ -47,35 +48,36 @@ const addEmployee = () => {
         },
         {
             type: "input",
-            message: "Please enter the emplpoyee's name.",
+            message: "Please enter the employee's name.",
             name: "name"
         },
         {
             type: "input",
-            message: "Please enter the emplpoyee's id.",
+            message: "Please enter the employee's id.",
             name: "id"
         },
         {
             type: "input",
-            message: "Please enter the emplpoyee's email.",
+            message: "Please enter the employee's email.",
             name: "email"
         },
         {
             type: "input",
-            message: "Please enter the emplpoyee's school.",
+            message: "Please enter the employee's school.",
             name: "school",
             when: (selected) => selected.role === "Intern"
         },
         {
             type: "input",
-            message: "Please enter the emplpoyee's GitHub username.",
+            message: "Please enter the employee's GitHub username.",
             name: "github",
             when: (selected) => selected.role === "Engineer"
         },
         {
             type: "confirm",
             message: "Would you like to add another employee?",
-            name: "confirmNewEmployee"
+            name: "confirmNewEmployee",
+            default: false
         },
     ]).then(employeeInfo => {
         const {name, id, email, role, school, github, confirmNewEmployee} = employeeInfo;
@@ -85,7 +87,7 @@ const addEmployee = () => {
             newEmployee = new Engineer(name, id, email, github);
             console.log("Added: ", newEmployee);
         } else if (role === "Intern") {
-            newEmployee = new Inter(name, id, email, school);
+            newEmployee = new Intern(name, id, email, school);
             console.log("Added: ", newEmployee)
         }
         employees.push(newEmployee);
@@ -93,7 +95,7 @@ const addEmployee = () => {
         if(confirmNewEmployee) {
             return addEmployee(employees);
         } else {
-            return team;
+            return employees;
         }
     });
 };
@@ -111,13 +113,7 @@ const htmlFile = teamData => {
 addManager().then(addEmployee).then(employees => {
     return createHTML(employees);
 }).then(htmlPage => {
-    return fs.writeFile(htmlPage);
+    return htmlFile(htmlPage);
 }).catch(error => {
     console.log(error);
 });
-
-
-
-
-
-

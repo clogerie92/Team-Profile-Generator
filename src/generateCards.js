@@ -101,3 +101,5 @@ const teamWebPage = function(employeeCards) {
     </html>
     `;
 }
+
+module.exports = createHtml;
