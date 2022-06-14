@@ -24,7 +24,7 @@ The following image shows a mock-up of the generated HTML’s appearance and fun
 The user should clone the repository from GitHub and install Node. This application also requires a file system, inquirer module and uses Jest for testing. 
 
 ## Usage 
-Use inquirer from your command line to answer questions about your project.
+Use inquirer from your terminal to answer the questions.
 View walk through video here - [Screencastify]()<br>
 <img src="./images/">
 
