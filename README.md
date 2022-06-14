@@ -15,7 +15,7 @@ This is a Node.js command-line application that takes in information about emplo
 
 The following image shows a mock-up of the generated HTML’s appearance and functionality:
 
-![HTML webpage titled "Team Profile Generator” features five boxes listing employee names, titles, and other key info.](./images/team2.png)
+![HTML webpage titled "Team Profile Generator” features six boxes listing employee names, titles, and other key info.](./images/team2.png)
 
 
 
