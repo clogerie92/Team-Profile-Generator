@@ -1,3 +1,18 @@
+const createInternCard = function(intern) {
+    return `
+    <div class="col-4 mt-4">
+        <div class="card">
+            <h5 class="card-header">${intern.name}</h5>
+            <div class="card-body">
+                <h5 class="card-title">Intern</h5>
+                <p class="email">Email:<a href="email at:${intern.email}">${intern.email}</a></p>
+                <p class="school">School: ${intern.school}</p>
+            </div>
+        </div>
+    </div>
+    `;
+};
+
 createHtml = (employeeData) => {
     cardsArray = [];
 
