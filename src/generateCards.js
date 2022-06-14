@@ -1,3 +1,29 @@
+createHtml = (employeeData) => {
+    cardsArray = [];
+
+    for (let i = 0; i < employeeData.length; i++) {
+        const employee = employeeData[i];
+        const role = employee.getRole();
+
+        if (role === "Manager") {
+            const managerCard = createManagerCard(employee);
+            cardsArray.push(managerCard);
+        } else if (role === "Engineer") {
+            const engineerCard = createEngineerCard(employee);
+            cardsArray.push(engineerCard);
+            
+        } else if (role === "Intern") {
+            const internCard = createInternCard(employee);
+            cardsArray.push(internCard);
+        }
+    }
+
+    const teamCards = cardsArray.join("");
+    const teamPage = teamWebPage(teamCards);
+    return teamPage;
+}
+
+// creates team webpage
 const teamWebPage = function(employeeCards) {
     return `<!DOCTYPE html>
     <html lang="en">
