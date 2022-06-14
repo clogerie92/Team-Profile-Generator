@@ -1,3 +1,18 @@
+const createEngineerCard = function(engineer) {
+    return `
+    <div class="col-4 mt-4">
+        <div class="card">
+            <h5 class="card-header">${engineer.name}</h5>
+            <div class="card-body">
+                <h5 class="card-title">Engineer</h5>
+                <p class="email">Email:<a href="email at:${engineer.email}">${engineer.email}</a></p>
+                <p class="github">GitHub: <a href="https://github.com/${engineer.github}">${engineer.github}</a></p>
+            </div>
+        </div>
+    </div>
+    `;
+};
+
 const createInternCard = function(intern) {
     return `
     <div class="col-4 mt-4">
