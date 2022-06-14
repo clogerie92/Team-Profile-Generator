@@ -32,7 +32,7 @@ View walk through video here - [Screencastify]()<br>
 This project is license under MIT
 
 ## Contributing 
-Contributors should read the installation section. 
+Contributors should reference the installation section. 
 
 ## Tests
 Run `npm test` to run Jest for tests. 
