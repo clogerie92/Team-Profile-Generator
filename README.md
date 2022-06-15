@@ -24,8 +24,7 @@ The user should clone the repository from GitHub and install Node. This applicat
 
 ## Usage 
 Use inquirer from your terminal to answer the questions.
-View walk through video here - [Screencastify]()<br>
-<img src="./images/">
+View walk through video here - [Screencastify](https://drive.google.com/file/d/1UAlmpLyy3yleeGLvLBq1zHIqHhwb7rOY/view)<br>
 
 ## Contributing 
 Contributors should reference the installation section. 
