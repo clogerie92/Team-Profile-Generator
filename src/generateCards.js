@@ -1,8 +1,8 @@
 const createManagerCard = function(manager) {
     return `
-    <div class="col-4 mt-4">
+    <div class="col-6 mt-2">
         <div class="card">
-            <div class="card-header bg-secondary>
+            <div class="card-header bg-secondary">
                 <h5>${manager.name}</h5>
             </div>
             <div class="card-body">
@@ -18,7 +18,7 @@ const createManagerCard = function(manager) {
 
 const createEngineerCard = function(engineer) {
     return `
-    <div class="col-4 mt-4">
+    <div class="col-6 mt-2">
         <div class="card">
             <div class="card-header bg-secondary">
                 <h5>${engineer.name}</h5>
@@ -36,7 +36,7 @@ const createEngineerCard = function(engineer) {
 
 const createInternCard = function(intern) {
     return `
-    <div class="col-4 mt-4">
+    <div class="col-6 mt-2">
         <div class="card">
             <div class="card-header bg-secondary">
                 <h5>${intern.name}</h5>
@@ -61,6 +61,7 @@ createHtml = (employeeData) => {
 
         if (role === "Manager") {
             const managerCard = createManagerCard(employee);
+            console.log(managerCard);
             cardsArray.push(managerCard);
         } else if (role === "Engineer") {
             const engineerCard = createEngineerCard(employee);
